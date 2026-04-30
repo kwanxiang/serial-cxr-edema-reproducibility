@@ -1,0 +1,6 @@
+dataset,n_pairs,positive_pairs,positive_rate,unique_patients
+all_accessible_serial_pairs,26251,6065,0.2310388175688545,10704
+subtrain_pairs,18279,4255,0.2327807866951146,7492
+internal_tuning_pairs,2631,611,0.2322310908399848,1071
+held_out_test_pairs,5341,1199,0.2244897959183673,2141
+public_validation_serial_pairs,0,0,,0

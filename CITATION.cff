@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility package, please cite the associated manuscript."
+title: "Serial Chest Radiograph Comparison for Detecting Pulmonary Edema Worsening: Reproducibility Package"
+version: "0.1.0"
+date-released: "2026-04-30"
+authors:
+  - family-names: "X."
+    given-names: "K."
+repository-code: "https://github.com/USERNAME/REPOSITORY"
+license: "MIT"

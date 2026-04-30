@@ -1,0 +1,4 @@
+model,feature_kind,requested_pca_components
+current_only_pixels,current,128
+difference_only_pixels,difference,128
+prior_current_temporal_pixels,temporal,256

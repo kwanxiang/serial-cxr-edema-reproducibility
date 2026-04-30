@@ -1,0 +1,13 @@
+split,stage,n
+train,raw_rows,416038
+train,edema_related_rows,68184
+train,rows_with_serial_frontal_pairs,55292
+train,unique_pair_ids_before_conflict_filter,28203
+train,conflicted_pair_ids_removed,1952
+train,final_pair_level_cohort,26251
+validation,raw_rows,499
+validation,edema_related_rows,61
+validation,rows_with_serial_frontal_pairs,0
+validation,unique_pair_ids_before_conflict_filter,0
+validation,conflicted_pair_ids_removed,0
+validation,final_pair_level_cohort,0
