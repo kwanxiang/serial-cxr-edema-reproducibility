@@ -1,6 +1,10 @@
 # GitHub Upload Steps
 
-Before upload:
+This repository has already been uploaded to:
+
+https://github.com/kwanxiang/serial-cxr-edema-reproducibility
+
+Original upload checklist:
 
 1. Create a new public GitHub repository.
 2. Replace `https://github.com/USERNAME/REPOSITORY` in `CITATION.cff` and `docs/DATA_AVAILABILITY_STATEMENT.md`.
