@@ -2,7 +2,7 @@
 
 This repository contains the non-image reproducibility materials for the manuscript:
 
-**Serial Chest Radiograph Comparison for Detecting Pulmonary Edema Worsening: A Public-Data Study With an Adjudicated Expert-Reader Reference**
+**Serial Chest Radiograph Comparison for Detecting Pulmonary Edema Worsening With Expert Adjudication**
 
 The study evaluates three matched input representations for detecting interval pulmonary edema worsening on serial frontal chest radiographs:
 
