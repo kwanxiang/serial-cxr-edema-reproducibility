@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this reproducibility package, please cite the associated manuscript."
-title: "Serial Chest Radiograph Comparison for Detecting Pulmonary Edema Worsening With Expert Adjudication: Reproducibility Package"
-version: "0.1.0"
-date-released: "2026-04-30"
+title: "Serial Images Improve AI Detection of Pulmonary Edema Worsening: An Expert-Adjudicated Benchmark"
+version: "1.0.0"
+date-released: "2026-07-19"
 authors:
-  - family-names: "X."
-    given-names: "K."
+  - family-names: "Xiang"
+    given-names: "Kun"
 repository-code: "https://github.com/kwanxiang/serial-cxr-edema-reproducibility"
 license: "MIT"

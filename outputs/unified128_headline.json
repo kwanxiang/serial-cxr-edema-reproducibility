@@ -1,0 +1,7 @@
+{
+  "spec": "matched PCA=128 for all three representations",
+  "tipping_point_n_reverted": 0,
+  "tipping_point_informative": false,
+  "base_ci_crosses_zero": true,
+  "n_discordant": 108
+}

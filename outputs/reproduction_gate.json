@@ -1,0 +1,27 @@
+{
+  "tolerance": 0.002,
+  "gate_pass": true,
+  "models": {
+    "current": {
+      "pca": 128,
+      "auc": 0.5838985811852707,
+      "published": 0.5839,
+      "delta": -1.41881472925931e-06,
+      "pass": true
+    },
+    "difference": {
+      "pca": 128,
+      "auc": 0.6541913448717325,
+      "published": 0.6542,
+      "delta": -8.655128267531786e-06,
+      "pass": true
+    },
+    "temporal": {
+      "pca": 256,
+      "auc": 0.6596783735359701,
+      "published": 0.6597,
+      "delta": -2.1626464029811387e-05,
+      "pass": true
+    }
+  }
+}

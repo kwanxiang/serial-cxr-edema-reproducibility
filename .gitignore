@@ -1,24 +1,8 @@
-.DS_Store
-._*
 __pycache__/
 *.py[cod]
-.ipynb_checkpoints/
-.env
-*.token
-credentials*
-secrets*
-
-# Do not commit raw or re-exported medical images.
-data/raw/
-data/interim/
-images/
-*.dcm
-*.nii
-*.nii.gz
-*.npy
-*.npz
-*.parquet
-
-# Local scratch outputs.
-tmp/
-scratch/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+.venv/
+venv/
+generated_figures/

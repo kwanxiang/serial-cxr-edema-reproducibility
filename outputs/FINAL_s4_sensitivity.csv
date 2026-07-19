@@ -1,0 +1,4 @@
+reference,n_worsening,prevalence,temporal_auc,difference_auc,current_auc,T_minus_D_auc,TmD_lo,TmD_hi,TmD_delong_p,T_minus_C_auc,TmC_lo,TmC_hi,TmC_delong_p
+three_reader_majority_vote,164,0.328,0.8247,0.8028,0.6722,0.0219,-0.0005,0.0444,0.05531968814425273,0.1525,0.1038,0.2001,2.1420314119471424e-09
+worsening_into_grade_2_3,114,0.228,0.8303,0.8107,0.6978,0.0195,-0.0051,0.0452,0.13129939021260115,0.1325,0.0783,0.185,1.6015648951677912e-06
+final_adjudicated (reference),150,0.3,0.7845,0.7678,0.6434,0.0166,-0.0086,0.0409,0.1825769833867812,0.141,0.0889,0.1924,2.2516629143864987e-07

@@ -1,0 +1,4 @@
+model,resolution,pca,test_auc,test_ap,auc_32x32_ref,auc_delta_vs_32
+Current-only,96x96,128,0.584,0.2841,0.5839,0.0001
+Difference-only,96x96,128,0.6558,0.3485,0.6542,0.0016
+Temporal,96x96,128,0.6676,0.3568,0.6679,-0.0003

@@ -1,0 +1,4 @@
+contrast,d_auc,lo_patient_clustered,hi_patient_clustered
+temporal_minus_difference,0.0137,0.006,0.0214
+temporal_minus_current,0.084,0.0659,0.1017
+difference_minus_current,0.0703,0.0498,0.0908

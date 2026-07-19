@@ -1,84 +1,83 @@
-# Serial CXR Pulmonary Edema Worsening Reproducibility Package
+# Serial Images Improve AI Detection of Pulmonary Edema Worsening: An Expert-Adjudicated Benchmark
 
-This repository contains the non-image reproducibility materials for the manuscript:
+Reproducibility materials for manuscript **INSI-D-26-00883** (*Insights into Imaging*).
 
-**Serial Chest Radiograph Comparison for Detecting Pulmonary Edema Worsening With Expert Adjudication**
+This repository supports a controlled input-representation benchmark comparing current-only,
+difference-only, and temporal (serial-image) inputs for detecting interval pulmonary edema
+worsening. The locked primary analysis used the same classifier family and the same retained
+PCA dimensionality (128 components) for all three representations.
 
-The study evaluates three matched input representations for detecting interval pulmonary edema worsening on serial frontal chest radiographs:
+## Headline results (matched PCA = 128)
 
-- `current_only_pixels`: current radiograph only
-- `difference_only_pixels`: pixel-level current-minus-prior representation
-- `prior_current_temporal_pixels`: prior image, current image, and pixel difference representation
+| Contrast | Reference | ΔAUC (95% CI) | Interpretation |
+|---|---|---|---|
+| Temporal − current-only | Report labels, n = 5,341 | +0.084 (0.066–0.102) | Supported |
+| Temporal − current-only | Expert reference, n = 500 | +0.141 (0.089–0.192) | Supported |
+| Temporal − difference-only | Expert reference, n = 500 | +0.017 (−0.009 to 0.041) | Not established |
 
-## What Is Included
+The serial-versus-single-image contrast was positive across the tested dimensionalities. The
+incremental contrast between full temporal and change-only inputs was small and was not
+established at the primary expert-reference analysis.
 
-- Sanitized held-out prediction table for the report-label cohort (`n = 5341`)
-- Sanitized expert-reference case table (`n = 500`)
-- Aggregate cohort, model, and reader-agreement tables
-- ROC and precision-recall figures used for manuscript submission
-- Scripts to regenerate ROC/PR figures and verify reported AUC/AP values
-
-## What Is Not Included
-
-This repository does **not** include raw CheXpert or CheXTemporal images, exported case-review images, DICOM files, Stanford AIMI credentials, PhysioNet credentials, or any patient/study/image-path identifiers.
-
-Raw source data must be obtained from the official CheXpert and CheXTemporal data providers under their respective data-use terms.
-
-## Repository Layout
+## Repository contents
 
 ```text
-data/derived/
-  held_out_predictions_sanitized.csv
-  expert_reference_cases_sanitized.csv
-  report_label_model_metrics.csv
-  expert_reference_model_metrics.csv
-  expert_reader_agreement.csv
-  report_vs_expert_target_crosstab.csv
-  cohort_flow.csv
-  cohort_summary.csv
-  split_characteristics.csv
-  model_specification.csv
-figures/
-  roc_curves.png
-  pr_curves.png
+reproduce_statistics.py       Primary point estimates and paired AUC contrasts from locked scores
+requirements.txt              Python dependencies
+DATA_NOTICE.md                Scope and privacy treatment of the released derived data
+data/
+  unified128_test_scores.csv  Sanitized held-out scores and report-derived targets
+  unified128_tune_scores.csv  Sanitized tuning scores and report-derived targets
+  final_adjudicated_cases.csv Sanitized reader grades and final expert-reference targets
 scripts/
-  regenerate_figures.py
-  verify_metrics.py
-docs/
-  DATA_AVAILABILITY_STATEMENT.md
-  DATA_DICTIONARY.md
+  expert500_unified.py        Three-reference contrasts and clustered bootstrap
+  full_metrics.py             Tables 3–5, calibration, agreement, and tipping-point check
+  s4_sensitivity.py           Supplementary Table S4 reference definitions
+  figures/                    Data-driven figure-generation scripts
+outputs/                      Precomputed aggregate results used in the revision
 ```
 
-## Quick Start
+The released identifiers (`pair_key` and `patient_cluster_id`) are random repository-specific
+keys. They preserve one-to-one joins and patient-clustered resampling without disclosing the
+public-dataset patient identifiers or image paths.
 
-Create a fresh Python environment and install dependencies:
+## Reproduce the locked-score analyses
+
+Create a Python environment, then run:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
 pip install -r requirements.txt
+python reproduce_statistics.py
+python scripts/expert500_unified.py
+python scripts/full_metrics.py
+python scripts/s4_sensitivity.py
 ```
 
-Verify the reported point estimates:
+These commands recompute the reported discrimination estimates, paired contrasts, operating-
+point metrics, calibration summaries, reader agreement, and sensitivity-reference results from
+the sanitized locked scores. Scripts write aggregate files to `outputs/`.
 
-```bash
-python scripts/verify_metrics.py
-```
+## Model fitting from source images
 
-Regenerate the ROC and precision-recall figures:
+The source CheXpert images and original CheXTemporal tables are governed by their respective
+data-use terms and are not redistributed here. Consequently, this public package verifies the
+reported locked-score statistical analysis but is not a one-command redistribution of the image
+preprocessing and PCA fitting inputs. The retained PCA dimensionality, split design, and input
+representations are fully described in the manuscript and supplement.
 
-```bash
-python scripts/regenerate_figures.py
-```
+## Privacy and data provenance
 
-The regenerated figures are written to `figures/roc_curves.png` and `figures/pr_curves.png`.
+The score and annotation tables are derived from the public CheXpert and CheXTemporal releases.
+Exact image paths, original patient/study identifiers, reader identifiers, demographics, and
+free-text adjudication comments have been removed. See `DATA_NOTICE.md`.
 
-## Data-Use Notice
+## Environment
 
-The CSV files in `data/derived/` are non-image derived research outputs. They exclude patient IDs, study IDs, image paths, raw images, exported review images, reader identifiers, free-text reader comments, and per-case report/pathology phrases. They are provided to support manuscript review and reproducibility of the reported statistical summaries.
+Python 3.12; numpy, pandas, scipy, scikit-learn, matplotlib, and Pillow. A fixed random seed of
+42 is used for stochastic analyses.
 
-The source CheXpert/CheXTemporal data are not redistributed. Users who need to rerun image preprocessing or model fitting from raw images should obtain the source datasets from the official providers and comply with their data-use agreements.
+## Citation
 
-## Manuscript Availability Statement
-
-After uploading this folder to GitHub, replace the placeholder repository URL in `docs/DATA_AVAILABILITY_STATEMENT.md`, `CITATION.cff`, and the manuscript declarations.
+Xiang K. *Serial Images Improve AI Detection of Pulmonary Edema Worsening: An
+Expert-Adjudicated Benchmark.* Insights into Imaging (under revision), manuscript
+INSI-D-26-00883.

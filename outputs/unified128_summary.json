@@ -1,0 +1,32 @@
+{
+  "spec": {
+    "current": 128,
+    "difference": 128,
+    "temporal": 128
+  },
+  "thresholds": {
+    "current": 0.5456182766876512,
+    "difference": 0.45640806365324715,
+    "temporal": 0.5058638866959242
+  },
+  "test_metrics": {
+    "current": {
+      "pca": 128,
+      "test_auc": 0.5838985811852707,
+      "test_ap": 0.2843368593782253,
+      "threshold": 0.5456182766876512
+    },
+    "difference": {
+      "pca": 128,
+      "test_auc": 0.6541913448717325,
+      "test_ap": 0.34819173379245605,
+      "threshold": 0.45640806365324715
+    },
+    "temporal": {
+      "pca": 128,
+      "test_auc": 0.667928851058483,
+      "test_ap": 0.3577387898827931,
+      "threshold": 0.5058638866959242
+    }
+  }
+}

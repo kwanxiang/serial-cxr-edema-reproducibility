@@ -1,0 +1,35 @@
+{
+  "pairwise_worsening_agreement": 0.832,
+  "pairwise_worsening_agreement_ci": [
+    0.798,
+    0.864
+  ],
+  "cohen_kappa_worsening": 0.6495,
+  "cohen_kappa_ci": [
+    0.5856,
+    0.7143
+  ],
+  "qwk_prior_severity": 0.769,
+  "qwk_prior_ci": [
+    0.7251,
+    0.8079
+  ],
+  "qwk_current_severity": 0.7006,
+  "qwk_current_ci": [
+    0.6441,
+    0.7498
+  ],
+  "two_reader_full_concordance_n": 313,
+  "adjudicated_n": 187,
+  "expert_worsening_n": 150,
+  "expert_prevalence": 0.3,
+  "report_vs_expert_agreement": 0.784,
+  "report_vs_expert_agreement_ci": [
+    0.748,
+    0.82
+  ],
+  "report_neg_expert_pos": 73,
+  "report_pos_expert_neg": 35,
+  "n_discordant": 108,
+  "unevaluable_final": 0
+}
