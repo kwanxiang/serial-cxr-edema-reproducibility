@@ -46,6 +46,13 @@ Options: `fit_models.py --components 64` or `--components 256` for the PCA-dimen
 Temporal − current-only ΔAUC 0.084 (95% CI 0.066–0.102); temporal − difference-only ΔAUC 0.014
 (95% CI 0.006–0.021).
 
+Rounding: `evaluate.py` rounds each full-precision value once (half up) to the decimals shown. In the
+manuscript, two lower confidence bounds were rounded via an intermediate four-decimal value and end one
+unit higher in the last digit: the current-only test AUC bound is printed as 0.566 (full precision
+0.56547, shown here as 0.565) and the temporal − difference-only ΔAUC bound as 0.007 (full precision
+0.00648, shown here as 0.006). A few values in Supplementary Tables S2 and S3 differ in the last digit
+in the same way. These are display differences only; the underlying results are the same.
+
 Tested with Python 3.9.6 and the package versions in `requirements.txt`. With other versions,
 randomized PCA can shift scores in the fifth decimal place.
 
