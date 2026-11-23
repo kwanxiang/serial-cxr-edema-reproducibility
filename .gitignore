@@ -1,0 +1,18 @@
+# code only: never commit data, scores, images or results
+*.csv
+*.parquet
+*.npy
+*.jpg
+*.png
+*.json
+CheXpert-v1.0-small/
+images/
+data/
+outputs/
+__pycache__/
+*.py[cod]
+.DS_Store
+._*
+Thumbs.db
+.venv/
+venv/
